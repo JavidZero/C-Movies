@@ -1,0 +1,49 @@
+<!-- Navigation Menu Button-->
+                <div class="nav-hamburger">
+                    <span class="line"></span>
+                </div>
+                <!-- End Of Navigation Menu Button-->
+
+                <!-- Navigation Logo -->
+                <div class="nav-logo">
+                    <a href="/index.html">
+                        <h2><span>c</span>-movies</h2>
+                    </a>
+                </div>
+                <!-- End of Navigation Logo -->
+
+                <!-- Navigation Links-->
+                <ul class="nav-links">
+                    <li><a href="/index.html">home</a></li>
+                    <li><a href="${path}movies.html">movies</a></li>
+                    <li><a href="${path}tv-series.html">tv-series</a></li>
+                </ul>
+                <!-- End Of Navigation Links -->
+
+                <!-- Search -->
+                <div class="nav-search">
+                    <input class="nav-search-input" type="text" placeholder="Search Movie">
+                    <button class="nav-search-button-inside">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div class="nav-search-results">
+                        <!--<div class="nav-search-result-item">
+                            <img src="" alt="">
+                            <div class="nav-search-result-item-info">
+                                <h5>Name</h5>
+                                <span>
+                                    <p>Type</p>
+                                    <p>IMDB</p>
+                                </span>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+                <!-- End Of Search -->
+
+                <!-- Login Button-->
+                <button class="nav-login">Login</button>
+                <button class="nav-search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+                <!-- End Of Login Button -->

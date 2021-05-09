@@ -1,0 +1,704 @@
+/*********************** MAIN CSS ****************/
+/*************************************************/
+/*************************************************/
+/***************   Starter PAck    ***************/
+:root {
+    --bg-footer: #232931;
+    --bg-nav: #1e2129;
+    --bg-body: #393e46;
+    --buttons: #4ecca3;
+    --text: #eeeeee;
+}
+
+*, 
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 400px) {
+    html {
+        font-size: 40%;
+    }
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-body);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    display: block;
+
+    position: relative;
+}
+
+.container {
+    max-width: 1440px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button:focus, button:active,
+input:focus, input:active {
+    outline: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}
+
+/*************************************************/
+/*************************************************/
+
+
+/*************************************************/
+/*************************************************/
+/***************     Navigation    ***************/
+
+.nav {
+    width: 100%;
+    min-height: 60px;
+    background-color: var(--bg-nav);
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    position: relative;
+
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+
+/****** Nav hamburger  ******/
+.nav-hamburger{
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    display: none;
+}
+
+.line::before,
+.line::after {
+    content: '';
+
+    position: absolute;
+    left: 0;
+}
+.line, .line::before, .line::after {
+    width: 3rem;
+    height: 2px;
+    display: block;
+    background-color: white;
+    box-shadow: 0 0 1px white;
+}
+
+.line {
+    position: relative;
+}
+
+.line::before {
+    top: -8px;
+}
+
+.line::after {
+    bottom: -8px;
+}
+
+/**** Nav Logo ****/
+.nav-logo {
+    margin-right: auto;
+}
+
+.nav-logo a h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--buttons);
+    text-transform: uppercase;
+    letter-spacing: .4rem;
+
+}
+
+.nav-logo a  h2 span {
+    font-size: 3.8rem;
+    text-transform: uppercase;
+}
+
+
+/******* Nav Links *********/
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-links li {
+    height: 1.4rem;
+}
+
+.nav-links li a{
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: var(--text);
+    font-weight: 600;
+    letter-spacing: .2rem;
+}
+
+
+/*******  Nav Button ********/
+
+.nav-login {
+    width: 7rem;
+    height: 3.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--buttons);
+    color: white;
+    font-size: 1.6rem;
+}
+
+
+.nav-search-button {
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 1px solid var(--text);
+    border-radius: 3px;
+    background-color: transparent;
+    display: none;
+}
+
+/***********  Nav Search  *****/
+.nav-search {
+    width: 250px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 0 4px 4px;
+    border: 1px solid var(--text);
+    border-radius: 3px;
+
+    position: relative;
+}
+
+.nav-search-results {
+    width: 100%;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    padding: 5px 0;
+    background-color: var(--bg-nav);
+
+    display: none;
+}
+
+.nav-search-results.open {
+    display: block;
+}
+
+.nav-search-result-item {
+    width: 100%;
+    min-height: 6rem;
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+    padding: 10px 5px;
+    color: var(--text);
+}
+
+.nav-search-result-item img {
+    width: 5rem;
+    height: 5rem;
+}
+
+.nav-search-result-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.nav-search-result-item-info a:hover {
+    color: var(--buttons);
+}
+
+.nav-search-result-item-info h5 {
+    font-size: 1.6rem;
+    margin-bottom: .5rem;
+
+}
+
+.nav-search-result-item-info p {
+    font-size: 1.2rem;
+}
+
+.nav-search-result-item-info span {
+    display: flex;
+    gap: 10px;
+}
+.nav-search input {
+    width: calc(100% - 60px);
+    background-color: transparent;
+    border: none;
+    color: var(--text);
+}
+
+.nav-search-button-inside {
+    width: 30px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+
+@media only screen and (max-width:980px ) {
+    .nav-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .nav-search {
+        width: 100%;
+    }
+
+    .nav-login {
+        margin-left: auto;
+    }
+}
+
+
+@media only screen and (max-width: 768px){
+    .nav-hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        width: 100%;
+        height: calc(100vh - 60px);
+        position: absolute;
+        left: 0%;
+        top: calc(100% + 10px);
+
+        background-color: var(--bg-nav);
+        border-top: 1px solid var(--text);
+
+        flex-direction: column;
+        gap: 5rem;
+
+
+        display: none;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-login {
+        position: absolute;
+        top: 20px;
+        right: 7rem;
+
+        transform: translateY(-50%);
+        
+    }
+    
+    .nav-search-button {
+        display: block;
+        color: white;
+        font-size: 1.6rem;
+        cursor: pointer;
+
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        transform: translateY(-50%);
+    }
+
+    .nav-search {
+        width: 100%;
+        display: none;
+    }
+
+    .nav-search.open {
+        display: block;
+    }
+
+}
+
+@media only screen and (max-width: 400px){
+    .nav-wrapper {
+        gap: 1rem;
+    }
+
+    .nav-login {
+        top: 14px;
+        
+    }
+    
+    .nav-search-button {
+        top: 14px;
+    }
+}
+
+/******************  End Of Navigation   ****************/
+/*************************************************/
+
+
+
+/*************************************************/
+/*************************************************/
+/***************   Main    ***************/
+.main {
+    width: 100%;
+    padding: 40px 0 20px 0;
+
+    min-height: calc(100vh - 90px);
+}
+
+
+
+/*************************************************/
+/*************************************************/
+
+
+/*************************************************/
+/*************************************************/
+/***************   Footer    ***************/
+
+
+.footer {
+    padding: 10px;
+    background-color: var(--bg-nav);
+    width: 100%;
+}
+
+/*************************************************/
+/*************************************************/
+/*************** END OF MAIN CSS *******************/
+
+/*************************************************/
+/*************************************************/
+/***************   Index Page    ***************/
+
+
+/*************************************************/
+/*************************************************/
+/***************   hero    ***************/
+.hero {
+    width: 100%;
+    height: 70vh;
+    overflow-x: hidden;
+}
+
+@media only screen and (max-width: 768px){
+    .hero {
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .hero {
+        height: 250px;
+    }
+}
+
+
+
+@media only screen and (max-width: 400px){
+    .hero {
+        height: 150px;
+    }
+}
+
+
+
+.slider {
+    width: 700%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+
+    animation: slider-animation 18s infinite;
+    position: relative;
+}
+
+@keyframes slider-animation {
+    0% {
+        left: 0%;
+    }
+    14% {
+        left: 0%;
+    }
+    16% {
+        left: -100%;
+    }
+    30% {
+        left: -100%;
+    }
+    32% {
+        left: -200%;
+    }
+    46% {
+        left: -200%;
+    }
+    48% {
+        left: -300%;
+    }
+    62% {
+        left: -300%;
+    }
+    64% {
+        left: -400%;
+    }
+    78% {
+        left: -400%;
+    }
+    80% {
+        left: -500%;
+    }
+    96%{
+        left: -500%;
+    }
+    100% {
+        left: -600;
+    }
+}
+
+.slider::after {
+    content: '';
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    z-index: 10;
+    bottom: -5px;
+    left: 0%;
+    background-image: linear-gradient(to bottom, transparent 0%, var(--bg-body) 120%);
+}
+
+
+.slider-item {
+    width: 20%;
+    height: 100%;
+    cursor: pointer;
+    
+    position: relative;
+}
+
+.slider-item img {
+    width: 100%;
+    height: 120%;
+}
+
+.slider-item-text {
+    position: absolute;
+    left: 3rem;
+    bottom: 3rem;
+    color: var(--text);
+}
+
+.slider-item-text h3 {
+    text-transform: capitalize;
+    font-size: 2.2rem;
+}
+
+/****************   End Of hero  **********************/
+/*************************************************/
+
+
+/*************************************************/
+/*************************************************/
+/***************   Main    ***************/
+
+.main-choice-container {
+    margin-bottom: 5rem;
+}
+
+.main-choice-title {
+    color: var(--buttons);
+    margin-bottom: 3rem;
+}
+
+.main-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+
+    margin-bottom: 2rem;
+}
+
+.main-list-item {
+    border-radius: 5px;
+    position: relative;
+    max-width: 320px;
+}
+
+.main-list-item img {
+    border-radius: 5px;
+    height: 200px;
+}
+
+.main-list-item h5 {
+    width: 50%;
+    padding: 2px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+
+    font-weight: 700;
+    color: var(--text);
+}
+
+.see-more-container {
+    width: 100%;
+    text-align: right;
+}
+
+.see-more-link {
+    color: var(--buttons);
+}
+
+.see-more-link:hover {
+    text-decoration: underline;
+}
+
+/***************** End Of Index ***************/
+/*************************************************/
+
+
+/*************************************************/
+/*************************************************/
+/***************   Movies / Tv-Series  /  Search ***************/
+
+.main-content-pages {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.page {
+    width: 35px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    background-color: var(--bg-footer);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page.active {
+    background-color: var(--buttons);
+}
+
+
+/*************************************************/
+/*************************************************/
+/***************   Film  ***************/
+
+.movie-video-container {
+    width: 100%;
+    height: 40rem;
+    background-color: black;
+    margin-bottom: 3rem;
+}
+
+.movie-video-container img {
+    height: 100%;
+}
+
+.movie-info-container {
+    width: 100%;
+    min-height: 50px;
+    padding: 1rem;
+    margin-bottom: 3rem;
+
+    color: var(--text);
+}
+
+.movie-info-container .name {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.movie-info-container .imdb {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.movie-info-container .overview {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.movie-info-container .other {
+    color: grey;
+}
+
+.movie-info-container .other span {
+    color: var(--text);
+}
+
+.movie-related-container {
+    width: 100%;
+    min-height: 100px;
+    background-color: honeydew;
+}
+/*************************************************/
+/*************************************************/
